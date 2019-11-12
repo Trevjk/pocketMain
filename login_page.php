@@ -26,11 +26,11 @@
             goto a;
         }
         if ($_SESSION['type'] == 'user'){
-            header("Location: user_page.php");
-            }
+            // header("Location: user_page.php");
+            // }
         elseif ($_SESSION['type'] == 'admin'){
-            header("Location: admin_page.php");
-            }
+            // header("Location: admin_page.php");
+            // }
         else{
           a:
           // Were a username and password provided? If so check them against
@@ -41,8 +41,8 @@
           $password = "";
           $userError = "";
           $passError = "";
-          $salt1    = "qm&h*";
-          $salt2    = "pg!@";
+          $salt1    = "";
+          $salt2    = "";
           if(!isset($_POST["button"])){
             $userError = "Please enter a valid username.";
             $passError = "Please enter a valid password.";
@@ -50,25 +50,26 @@
           if(isset($_POST["button"])){
               $username = $_POST["username"];
               $password = $_POST["password"];
-              $protectPsswrd = hash('ripemd128', "$salt1$password$salt2");
-              $queryOne = "SELECT * FROM lab4_users WHERE username = '$username' and password = '$protectPsswrd'";
+              $queryOne = "SELECT * FROM accounts WHERE username = '$username'";
               if($result1 = $conn->query($queryOne)){
+                $row = $result1->fetch_assoc();
+                $salt1 = $row['salt1'];
+                $salt2 = $row['salt2'];
+                $protectPsswrd = hash('sha256', "$salt1$password$salt2");
                 // $row = $result1->fetch_assoc();
                 $_SESSION['username'] = $username;
-                $row = $result1->fetch_assoc();
-                echo "<p>".$row['type']."</p>";
-                $forename = $row['forename'];
+                $userid = $row['userID'];
                 $type = $row['type'];
                 if(mysqli_num_rows($result1) > 0){
                     echo "<p>tester</p>";
                     if ($type == 'user'){
                         $_SESSION['type'] = $type;
-                        $_SESSION['forename'] = $forename;
+                        $_SESSION['userID'] = $userID;
                         header("Location: user_page.php");
                     }
                     elseif ($type == 'admin'){
                         $_SESSION['type'] = $type;
-                        $_SESSION['forename'] = $forename;
+                        $_SESSION['userID'] = $userID;
                         header("Location: admin_page.php");
                     }
                 }
@@ -92,8 +93,8 @@
             }
         }
         ?>
-        <h1>Welcome to <span style="font-style:italic; font-weight:bold; color: maroon">
-                Great Web Application</span>!</h1>
+        <h1><span style="font-family:verdana; font-style:bold; font-weight:bold; color: maroon">
+                Pocket Main!</span></h1>
                 
         <p style="color: red">
         <!--Placeholder for error messages-->
