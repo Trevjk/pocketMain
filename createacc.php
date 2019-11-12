@@ -67,31 +67,31 @@
 
     //CHecking if fields have been filled
     if(empty($username) || empty($pass) || empty($pass2) || empty($email) || empty($nick)) {
-      $topErr = "All fields must be complete in order to proceed.";
+      $topErr = "All fields must be complete in order to proceed";
       $proceed = false;
     }
 
     //Checking if username is alphanumeric or if it has been taken
     if(!preg_match("/^[a-zA-Z0-9]+$/", $username, $matches)) {
-      $usernameErr = "Your username must only consist of letters and numbers.";
+      $usernameErr = "Your username must only consist of letters and numbers";
       $proceed = false;
     } else {
       $query = "SELECT username FROM accounts WHERE username = '$username'";
       $result = $conn->query($query);
-      if($result->num_rows === 0) {
-        $usernameErr = "Username is already taken";
-        $row = $result->fetch_assoc();
-        $usernameErr += $row["username"];
+      $row = $result->fetch_assoc();
+      $name = $row['username'];
+      if(!empty($name) && !is_null($name)) {
+        $usernameErr = "Username \"$name\" is already taken";
         $proceed = false;
       }
     }
 
     //Checking if password is all good
     if(!preg_match("/^[a-zA-Z0-9\W]*$/", $pass, $matches)) {
-      $nameErr = "Your password must consist of letters, numbers and special characters.";
+      $nameErr = "Your password must consist of letters, numbers and special characters";
       $proceed = false;
     } else if(strlen($pass) < 8) {
-      $nameErr = "Your password must be eight characters or longer and may consist of letters, numbers and special characters.";
+      $nameErr = "Your password must be eight characters or longer and may consist of letters, numbers and special characters";
       $proceed = false;
     }
 
@@ -109,12 +109,30 @@
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email address";
       $proceed = false;
+    } else {
+      $query = "SELECT email FROM accounts WHERE email = '$email'";
+      $result = $conn->query($query);
+      $row = $result->fetch_assoc();
+      $mail = $row['email'];
+      if(!empty($mail) && !is_null($mail)) {
+        $emailErr = "Email address \"$mail\" is already in use";
+        $proceed = false;
+      }
     }
 
     //Checking nickname
     if(!preg_match("/^[a-zA-Z0-9]+$/", $nick, $matches)) {
-      $nickErr = "Your username must only consist of letters and numbers.";
+      $nickErr = "Your nickname must only consist of letters and numbers";
       $proceed = false;
+    } else {
+      $query = "SELECT nickname FROM accounts WHERE nickname = '$nick'";
+      $result = $conn->query($query);
+      $row = $result->fetch_assoc();
+      $nic = $row['nickname'];
+      if(!empty($nic) && !is_null($nic)) {
+        $nickErr = "Nickname \"$nic\" is already taken";
+        $proceed = false;
+      }
     }
 
 
@@ -122,7 +140,8 @@
     if($proceed) {
       $query = "INSERT INTO accounts (username, passwordhash, salt1, salt2, email, nickname) VALUES ('$username', '$passwordHash', '$salt1', '$salt2', '$email', '$nick')";
       $conn->query($query);
-    } else {
+      header("Location: success.php");
+    } else if($topErr != "All fields must be complete in order to proceed.") {
       $topErr = "An error has prevented you from signing up.";
     }
 
