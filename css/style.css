@@ -1,0 +1,33 @@
+body {
+    padding-top: 90px;
+    color:rgb(0, 0, 0);
+    background-color: antiquewhite;
+}
+
+a:visited {
+    color:rgb(35, 174, 255);
+}
+a:link {
+    color:rgb(82, 255, 189);
+}
+a:hover {
+    color:rgb(241, 105, 105);
+}
+.btn-custom {
+    color:rgb(82, 255, 189);
+    background-color: rgb(255, 245, 101);
+}
+nav a:visited {
+    color:rgb(35, 174, 255);
+}
+nav a:link {
+    color:rgb(82, 255, 189);
+}
+nav a:hover {
+    color:rgb(241, 105, 105);
+}
+
+.navbar {
+    color:rgb(82, 255, 189);
+    background-color: rgb(19, 125, 139);
+}
