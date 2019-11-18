@@ -6,6 +6,10 @@
           body {
             font-size: 125%;
           }
+          input[type=submit] {
+            width: 16em; height:2em;
+            font-size: 15px;
+          }
         </style>
     </head>
     <body>
@@ -51,6 +55,16 @@
    <li>Sudden Death with tied percentage/stock will result in a 1 stock/2 minutes playoff match.</li>
    <li>There will be no loading anything on to the tournament consoles.</li>
  </ul>
+
+ <?php
+   if(isset($_POST["next"]))
+     header("Location: evoMap.php")
+ ?>
+
+ <br>
+ <form method="post" action="evo.php">
+   <input type="submit" name="next" value="Continue to Map Selection">
+ </form>
 
  <br>
  <p style="font-size: 80%;">Click <a href="rulesets.html">here</a> to return to the rulesets page.</p>

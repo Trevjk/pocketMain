@@ -6,6 +6,10 @@
           body {
             font-size: 125%;
           }
+          input[type=submit] {
+            width: 16em; height:2em;
+            font-size: 15px;
+          }
         </style>
     </head>
     <body>
@@ -70,6 +74,16 @@
 
 <h3>Mii Fighter Clause</h3>
 <p>Mii Fighters must be created using Guest Miis and their name should contain the moves being used in the format ‘xxxx’. Any combination of moves may be used, but once a player has selected a Special Move Set for a specific Mii Fighter type (Brawler/Swordfighter/Gunner) that Set must be paired with that Fighter type for the remainder of the set.</p>
+
+<?php
+  if(isset($_POST["next"]))
+    header("Location: caliMap.php")
+?>
+
+<br>
+<form method="post" action="california.php">
+  <input type="submit" name="next" value="Continue to Map Selection">
+</form>
 
  <br>
  <p style="font-size: 80%;">Click <a href="rulesets.html">here</a> to return to the rulesets page.</p>

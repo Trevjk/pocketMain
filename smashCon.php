@@ -6,6 +6,10 @@
           body {
             font-size: 125%;
           }
+          input[type=submit] {
+            width: 16em; height:2em;
+            font-size: 15px;
+          }
         </style>
     </head>
     <body>
@@ -98,6 +102,16 @@ list. These bans do not persist throughout the Set.</p>
 
 <p>If you are playing on the broadcast, you may be asked to refrain from
 using certain Battlefield/Omega form stages at their discretion</p>
+
+<?php
+  if(isset($_POST["next"]))
+    header("Location: smashConMap.php")
+?>
+
+<br>
+<form method="post" action="smashCon.php">
+  <input type="submit" name="next" value="Continue to Map Selection">
+</form>
 
 <br>
 <p style="font-size: 80%;">Click <a href="rulesets.html">here</a> to return to the rulesets page.</p>
