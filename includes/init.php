@@ -1,12 +1,19 @@
 <?php
     //output buffering, start in order to redirect a page
-     session_start();
-     ob_start();
+    ob_start();
+    session_start();
+
    
-     $hn = 'localhost';
-     $db = 'pocketMain';
-     $un = 'root';
-     $pw = '';
+    // $hn = 'pluto.cse.msstate.edu';
+    // $db = 'cjn146';
+    // $un = 'cjn146';
+    // $pw = 'pepperjackcheeseplease';
+
+    $hn = 'localhost';
+    $db = 'pocketmain';
+    $un = 'root';
+    $pw = '';
+
     // $charset = "utf8mb4";
 
     $dsn = "mysql:host=$hn;dbname=$db";
@@ -18,7 +25,7 @@
     $pdo = new PDO($dsn, $un, $pw, $opt);
     
     $root_directory = "pocketMain2";
-    $from_email = "tjk154@msstate.edu";
-    $reply_email = "tjk154@msstate.edu";
+    $from_email = "fake_email@mail.com";
+    $reply_email = "fake_email@mail.com";
     include "php_functions.php";
 ?>

@@ -34,19 +34,33 @@
         
         if (!isset($error)) {
             $vcode=generate_token();
+            
             try {
                 $sql = "INSERT INTO users (firstname, lastname, username, email, password, comments, validationcode, active, joined, last_login) VALUES (:firstname, :lastname, :username, :email, :password, :comments, :vcode, 0, current_date, current_date)";
                 $stmnt = $pdo->prepare($sql);
                 $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$email, ':password'=>password_hash($pword, PASSWORD_BCRYPT), ':comments'=>$comments, ':vcode'=>$vcode];
                 $stmnt->execute($user_data);
          
-                $body = "Please click on the link below to activate your account\r\n
-                http://{$_SERVER['SERVER_NAME']}/{$root_directory}/activate.php?user={$uname}&code={$vcode}";
+                $body = "<p>Please click on the link below to activate your account\r\n
+                <a href=http://{$_SERVER['SERVER_NAME']}/{$root_directory}/activate.php?user={$uname}&code={$vcode}>Activate Account</a></p>";
                 send_mail($email, "Activate Account", $body, $from_email, $reply_email);
             } catch(PDOException $e) {
                 echo "Error: ".$e->getMessage();
             }
         }
+
+        // try {
+        //     $sql = "INSERT INTO users (firstname, lastname, username, email, salt1, salt2, password, comments, validationcode, active, joined, last_login) VALUES (:firstname, :lastname, :username, :email, :salt1, :salt2, :password, :comments, :vcode, 0, current_date, current_date)";
+        //     $stmnt = $pdo->prepare($sql);
+        //     $user_data = [':firstname'=>$fname, ':lastname'=>$lname, ':username'=>$uname, ':email'=>$email, ':salt1'=>$salt1,':salt2'=>$salt2, ':password'=>$pword, ':comments'=>$comments, ':vcode'=>$vcode];
+        //     $stmnt->execute($user_data); 
+     
+        //     $body = "Please click on the link below to activate your account\r\n
+        //     http://{$_SERVER['SERVER_NAME']}/{$root_directory}/activate.php?user={$uname}&code={$vcode}";
+        //     send_mail($email, "Activate Account", $body, $from_email, $reply_email);
+        // } catch(PDOException $e) {
+        //     echo "Error: ".$e->getMessage();
+        // }
         
     } else {
         $fname="";

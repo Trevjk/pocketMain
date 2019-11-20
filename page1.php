@@ -9,9 +9,23 @@
             <?php 
                 show_msg();
             ?>
-            <h1 class="text-center">Page 1</h1>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. "</p>
-        </div> <!--Container-->
+            <head>
+        <title>Rulesets</title>
+            </head>
+
+
+    <h1>Super Smash Bros. Ultimate Rulesets</h1>
+
+    <p>Select a ruleset to view.</p>
+<?php
+   echo  "<a href='/{$root_directory}/maps/smashCon.php'>SmashCon Ruleset</a><br><br>";
+   echo  "<a href='/{$root_directory}/maps/evo.php'>Evo Ruleset</a><br><br>";
+   echo  "<a href='/{$root_directory}/maps/california.php'>California Ruleset</a><br><br>";
+
+?>
+
+<img src="">
+</div> <!--Container-->
     
         <?php include "includes/footer.php" ?>
     </body>
