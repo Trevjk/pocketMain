@@ -41,7 +41,7 @@ if(isset($_GET["character"])) {
 <body>
     <br>
     <div>
-        <img src="<?php echo "./renders/" .$character . ".png" ?>">
+        <img src="<?php echo "./renders/" .str_replace(" ", "%20", $character) . ".png" ?>" alt = "No image loaded!">
     </div>
     <br>
     <h2><?php echo $character ?>'s Frame Data</h2>
