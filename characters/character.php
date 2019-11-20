@@ -66,9 +66,9 @@ if(isset($_GET["character"])) {
             //         echo '</tr>' . PHP_EOL;
             // }
             // echo '</table>' . PHP_EOL;
-            $highestRow = $worksheet->getHighestRow(); // e.g. 10
-            $highestColumn = $worksheet->getHighestColumn(); // e.g 'F'
-            $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); // e.g. 5
+            // $highestRow = $worksheet->getHighestRow(); // e.g. 10
+            // $highestColumn = $worksheet->getHighestColumn(); // e.g 'F'
+            // $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); // e.g. 5
 
             // for ($row = 2; $row <= $highestRow; ++$row) {
             //     $col = 1;
@@ -102,7 +102,12 @@ if(isset($_GET["character"])) {
                     $value = $worksheet->getCellByColumnAndRow($col, $row)->getValue();
                     if($value == null && $row != 1 && $col == 1)
                         break 2;
-                    $substring .= "\t\t\t\t<td>" . $value . '</td>' . PHP_EOL;
+                    if ($row != 1) {
+                        $substring .= "\t\t\t\t<td>" . $value . '</td>' . PHP_EOL;
+                    }
+                    else {
+                        $substring .= "\t\t\t\t<th>" . $value . '</th>' . PHP_EOL;
+                    }
                 }
                 $string .= "\t\t\t<tr>" . PHP_EOL . $substring . "\t\t\t</tr>" . PHP_EOL;
                 $substring = "";
