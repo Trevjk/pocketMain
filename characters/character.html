@@ -10,97 +10,153 @@
         <h2>CHOOSE YOUR CHARACTER</h2>
 
         <div id="form">
-            <form action="character.php" method="get">
-                Character Name:<br>
-                <!-- <input type="text" name="character" value=""><br> -->
-                <select name="character">
-                        <option value="Mario">Mario</option>
-                        <option value="Donkey Kong">Donkey Kong</option>
-                        <option value="Link">Link</option>
-                        <option value="Samus">Samus</option>
-                        <option value="Dark Samus">Dark Samus</option>
-                        <option value="Yoshi">Yoshi</option>
-                        <option value="Kirby">Kirby</option>
-                        <option value="Fox">Fox</option>
-                        <option value="Pikachu">Pikachu</option>
-                        <option value="Luigi">Luigi</option>
-                        <option value="Ness">Ness</option>
-                        <option value="Captain Falcon">Captain Falcon</option>
-                        <option value="Jigglypuff">Jigglypuff</option>
-                        <option value="Peach">Peach</option>
-                        <option value="Daisy">Daisy</option>
-                        <option value="Bowser">Bowser</option>
-                        <option value="Ice Climbers">Ice Climbers</option>
-                        <option value="Sheik">Sheik</option>
-                        <option value="Zelda">Zelda</option>
-                        <option value="Dr. Mario">Dr. Mario</option>
-                        <option value="Pichu">Pichu</option>
-                        <option value="Falco">Falco</option>
-                        <option value="Marth">Marth</option>
-                        <option value="Lucina">Lucina</option>
-                        <option value="Young Link">Young Link</option>
-                        <option value="Ganondorf">Ganondorf</option>
-                        <option value="Mewtwo">Mewtwo</option>
-                        <option value="Roy">Roy</option>
-                        <option value="Chrom">Chrom</option>
-                        <option value="Mr. Game & Watch">Mr. Game & Watch</option>
-                        <option value="Meta Knight">Meta Knight</option>
-                        <option value="Pit">Pit</option>
-                        <option value="Dark Pit">Dark Pit</option>
-                        <option value="Zero Suit Samus">Zero Suit Samus</option>
-                        <option value="Wario">Wario</option>
-                        <option value="Snake">Snake</option>
-                        <option value="Ike">Ike</option>
-                        <option value="Squirtle">Squirtle</option>
-                        <option value="Ivysaur">Ivysaur</option>
-                        <option value="Charizard">Charizard</option>
-                        <option value="Diddy Kong">Diddy Kong</option>
-                        <option value="Lucas">Lucas</option>
-                        <option value="Sonic">Sonic</option>
-                        <option value="King Dedede">King Dedede</option>
-                        <option value="Olimar">Olimar</option>
-                        <option value="Lucario">Lucario</option>
-                        <option value="R.O.B.">R.O.B.</option>
-                        <option value="Toon Link">Toon Link</option>
-                        <option value="Wolf">Wolf</option>
-                        <option value="Villager">Villager</option>
-                        <option value="Mega Man">Mega Man</option>
-                        <option value="Wii Fit Trainer">Wii Fit Trainer</option>
-                        <option value="Rosalina & Luma">Rosalina & Luma</option>
-                        <option value="Little Mac">Little Mac</option>
-                        <option value="Greninja">Greninja</option>
-                        <option value="Mii Brawler">Mii Brawler</option>
-                        <option value="Mii Swordfighter">Mii Swordfighter</option>
-                        <option value="Mii Gunner">Mii Gunner</option>
-                        <option value="Palutena">Palutena</option>
-                        <option value="PAC-MAN">PAC-MAN</option>
-                        <option value="Robin">Robin</option>
-                        <option value="Shulk">Shulk</option>
-                        <option value="Bowser Jr">Bowser Jr</option>
-                        <option value="Duck Hunt">Duck Hunt</option>
-                        <option value="Ryu">Ryu</option>
-                        <option value="Ken">Ken</option>
-                        <option value="Cloud">Cloud</option>
-                        <option value="Corrin">Corrin</option>
-                        <option value="Bayonetta">Bayonetta</option>
-                        <option value="Inkling">Inkling</option>
-                        <option value="Ridley">Ridley</option>
-                        <option value="Simon">Simon</option>
-                        <option value="Richter">Richter</option>
-                        <option value="King K Rool">King K Rool</option>
-                        <option value="Isabelle">Isabelle</option>
-                        <option value="Incineroar">Incineroar</option>
-                        <option value="Piranha Plant">Piranha Plant</option>
-                        <option value="Joker">Joker</option>
-                        <option value="Hero">Hero</option>
-                        <option value="Banjo & Kazooie">Banjo & Kazooie</option>
-                        <option value="Terry">Terry</option>
-                </select>
-                <input type="submit" name="submit" value="Search">
-            </form>
+            Search for character<br>
+            <input type="text" name="character" id="character" onkeyup="myFunction()" placeholder="Enter name"><br>
+
+            <table id="chartable">
+                <tr>
+                    <td name="Mario"><a href="character.php?character=Mario"><img src="renders/Mario.png" height="200px"></a></td>
+                    <td name="Donkey Kong"><a href="character.php?character=Donkey Kong"><img src="renders/Donkey Kong.png" height="200px"></a></td>
+                    <td name="Link"><a href="character.php?character=Link"><img src="renders/Link.png" height="200px"></a></td>
+                    <td name="Samus"><a href="character.php?character=Samus"><img src="renders/Samus.png" height="200px"></a></td>
+                    <td name="Dark Samus"><a href="character.php?character=Dark Samus"><img src="renders/Dark Samus.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Yoshi"><a href="character.php?character=Yoshi"><img src="renders/Yoshi.png" height="200px"></a></td>
+                        <td name="Kirby"><a href="character.php?character=Kirby"><img src="renders/Kirby.png" height="200px"></a></td>
+                        <td name="Fox"><a href="character.php?character=Fox"><img src="renders/Fox.png" height="200px"></a></td>
+                        <td name="Pikachu"><a href="character.php?character=Pikachu"><img src="renders/Pikachu.png" height="200px"></a></td>
+                        <td name="Luigi"><a href="character.php?character=Luigi"><img src="renders/Luigi.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Ness"><a href="character.php?character=Ness"><img src="renders/Ness.png" height="200px"></a></td>
+                        <td name="Captain Falcon"><a href="character.php?character=Captain Falcon"><img src="renders/Captain Falcon.png" height="200px"></a></td>
+                        <td name="Jigglypuff"><a href="character.php?character=Jigglypuff"><img src="renders/Jigglypuff.png" height="200px"></a></td>
+                        <td name="Peach"><a href="character.php?character=Peach"><img src="renders/Peach.png" height="200px"></a></td>
+                        <td name="Daisy"><a href="character.php?character=Daisy"><img src="renders/Daisy.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Bowser"><a href="character.php?character=Bowser"><img src="renders/Bowser.png" height="200px"></a></td>
+                        <td name="Ice Climbers"><a href="character.php?character=Ice Climbers"><img src="renders/Ice Climbers.png" height="200px"></a></td>
+                        <td name="Sheik"><a href="character.php?character=Sheik"><img src="renders/Sheik.png" height="200px"></a></td>
+                        <td name="Zelda"><a href="character.php?character=Zelda"><img src="renders/Zelda.png" height="200px"></a></td>
+                        <td name="Dr. Mario"><a href="character.php?character=Dr. Mario"><img src="renders/Dr. Mario.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Pichu"><a href="character.php?character=Pichu"><img src="renders/Pichu.png" height="200px"></a></td>
+                        <td name="Falco"><a href="character.php?character=Falco"><img src="renders/Falco.png" height="200px"></a></td>
+                        <td name="Marth"><a href="character.php?character=Marth"><img src="renders/Marth.png" height="200px"></a></td>
+                        <td name="Lucina"><a href="character.php?character=Lucina"><img src="renders/Lucina.png" height="200px"></a></td>
+                        <td name="Young Link"><a href="character.php?character=Young Link"><img src="renders/Young Link.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Ganondorf"><a href="character.php?character=Ganondorf"><img src="renders/Ganondorf.png" height="200px"></a></td>
+                        <td name="Mewtwo"><a href="character.php?character=Mewtwo"><img src="renders/Mewtwo.png" height="200px"></a></td>
+                        <td name="Roy"><a href="character.php?character=Roy"><img src="renders/Roy.png" height="200px"></a></td>
+                        <td name="Chrom"><a href="character.php?character=Chrom"><img src="renders/Chrom.png" height="200px"></a></td>
+                        <td name="Mr. Game & Watch"><a href="character.php?character=Mr. Game & Watch"><img src="renders/Mr. Game & Watch.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Meta Knight"><a href="character.php?character=Meta Knight"><img src="renders/Meta Knight.png" height="200px"></a></td>
+                        <td name="Pit"><a href="character.php?character=Pit"><img src="renders/Pit.png" height="200px"></a></td>
+                        <td name="Dark Pit"><a href="character.php?character=Dark Pit"><img src="renders/Dark Pit.png" height="200px"></a></td>
+                        <td name="Zero Suit Samus"><a href="character.php?character=Zero Suit Samus"><img src="renders/Zero Suit Samus.png" height="200px"></a></td>
+                        <td name="Wario"><a href="character.php?character=Wario"><img src="renders/Wario.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Snake"><a href="character.php?character=Snake"><img src="renders/Snake.png" height="200px"></a></td>
+                        <td name="Ike"><a href="character.php?character=Ike"><img src="renders/Ike.png" height="200px"></a></td>
+                        <td name="Squirtle"><a href="character.php?character=Squirtle"><img src="renders/Squirtle.png" height="200px"></a></td>
+                        <td name="Ivysaur"><a href="character.php?character=Ivysaur"><img src="renders/Ivysaur.png" height="200px"></a></td>
+                        <td name="Charizard"><a href="character.php?character=Charizard"><img src="renders/Charizard.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Diddy Kong"><a href="character.php?character=Diddy Kong"><img src="renders/Diddy Kong.png" height="200px"></a></td>
+                        <td name="Lucas"><a href="character.php?character=Lucas"><img src="renders/Lucas.png" height="200px"></a></td>
+                        <td name="Sonic"><a href="character.php?character=Sonic"><img src="renders/Sonic.png" height="200px"></a></td>
+                        <td name="King Dedede"><a href="character.php?character=King Dedede"><img src="renders/King Dedede.png" height="200px"></a></td>
+                        <td name="Olimar"><a href="character.php?character=Olimar"><img src="renders/Olimar.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Lucario"><a href="character.php?character=Lucario"><img src="renders/Lucario.png" height="200px"></a></td>
+                        <td name="R.O.B."><a href="character.php?character=R.O.B."><img src="renders/R.O.B..png" height="200px"></a></td>
+                        <td name="Toon Link"><a href="character.php?character=Toon Link"><img src="renders/Toon Link.png" height="200px"></a></td>
+                        <td name="Wolf"><a href="character.php?character=Wolf"><img src="renders/Wolf.png" height="200px"></a></td>
+                        <td name="Villager"><a href="character.php?character=Villager"><img src="renders/Villager.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Mega Man"><a href="character.php?character=Mega Man"><img src="renders/Mega Man.png" height="200px"></a></td>
+                        <td name="Wii Fit Trainer"><a href="character.php?character=Wii Fit Trainer"><img src="renders/Wii Fit Trainer.png" height="200px"></a></td>
+                        <td name="Rosalina & Luma"><a href="character.php?character=Rosalina & Luma"><img src="renders/Rosalina & Luma.png" height="200px"></a></td>
+                        <td name="Little Mac"><a href="character.php?character=Little Mac"><img src="renders/Little Mac.png" height="200px"></a></td>
+                        <td name="Greninja"><a href="character.php?character=Greninja"><img src="renders/Greninja.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Mii Brawler"><a href="character.php?character=Mii Brawler"><img src="renders/Mii Brawler.png" height="200px"></a></td>
+                        <td name="Mii Swordfighter"><a href="character.php?character=Mii Swordfighter"><img src="renders/Mii Swordfighter.png" height="200px"></a></td>
+                        <td name="Mii Gunner"><a href="character.php?character=Mii Gunner"><img src="renders/Mii Gunner.png" height="200px"></a></td>
+                        <td name="Palutena"><a href="character.php?character=Palutena"><img src="renders/Palutena.png" height="200px"></a></td>
+                        <td name="PAC-MAN"><a href="character.php?character=PAC-MAN"><img src="renders/PAC-MAN.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Robin"><a href="character.php?character=Robin"><img src="renders/Robin.png" height="200px"></a></td>
+                        <td name="Shulk"><a href="character.php?character=Shulk"><img src="renders/Shulk.png" height="200px"></a></td>
+                        <td name="Bowser Jr"><a href="character.php?character=Bowser Jr"><img src="renders/Bowser Jr.png" height="200px"></a></td>
+                        <td name="Duck Hunt"><a href="character.php?character=Duck Hunt"><img src="renders/Duck Hunt.png" height="200px"></a></td>
+                        <td name="Ryu"><a href="character.php?character=Ryu"><img src="renders/Ryu.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Ken"><a href="character.php?character=Ken"><img src="renders/Ken.png" height="200px"></a></td>
+                        <td name="Cloud"><a href="character.php?character=Cloud"><img src="renders/Cloud.png" height="200px"></a></td>
+                        <td name="Corrin"><a href="character.php?character=Corrin"><img src="renders/Corrin.png" height="200px"></a></td>
+                        <td name="Bayonetta"><a href="character.php?character=Bayonetta"><img src="renders/Bayonetta.png" height="200px"></a></td>
+                        <td name="Inkling"><a href="character.php?character=Inkling"><img src="renders/Inkling.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Ridley"><a href="character.php?character=Ridley"><img src="renders/Ridley.png" height="200px"></a></td>
+                        <td name="Simon"><a href="character.php?character=Simon"><img src="renders/Simon.png" height="200px"></a></td>
+                        <td name="Richter"><a href="character.php?character=Richter"><img src="renders/Richter.png" height="200px"></a></td>
+                        <td name="King K Rool"><a href="character.php?character=King K Rool"><img src="renders/King K Rool.png" height="200px"></a></td>
+                        <td name="Isabelle"><a href="character.php?character=Isabelle"><img src="renders/Isabelle.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Incineroar"><a href="character.php?character=Incineroar"><img src="renders/Incineroar.png" height="200px"></a></td>
+                        <td name="Piranha Plant"><a href="character.php?character=Piranha Plant"><img src="renders/Piranha Plant.png" height="200px"></a></td>
+                        <td name="Joker"><a href="character.php?character=Joker"><img src="renders/Joker.png" height="200px"></a></td>
+                        <td name="Hero"><a href="character.php?character=Hero"><img src="renders/Hero.png" height="200px"></a></td>
+                        <td name="Banjo & Kazooie"><a href="character.php?character=Banjo & Kazooie"><img src="renders/Banjo & Kazooie.png" height="200px"></a></td>
+                </tr>
+                <tr>
+                        <td name="Terry"><a href="character.php?character=Terry"><img src="renders/Terry.png" height="200px"></a></td>
+                </tr>
+            </table>
         </div>
 
         <br><br>
+
+        <script>
+            function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, i, txtValue;
+            input = document.getElementById("character");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("chartable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName("td")
+                for (j = 0; j < td.length; j++) {
+                    txtValue = td[j].getAttribute("name");
+                    if (txtValue.toUpperCase().includes(filter)) {
+                        td[j].style.display = "";
+                    } else {
+                        td[j].style.display = "none";
+                    }
+                }
+            }
+            }
+            </script>
         
     </body>
 
