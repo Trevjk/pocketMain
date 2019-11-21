@@ -36,8 +36,7 @@
                             // if ($prev_group!=$row['group_name']) {
                             //     echo "<tr class='tbl-group-head'><td>{$row['group_name']}</td><td>{$row['group_description']}</td><td></td></tr>";
                             // }
-                            echo "<div style='background-color: white;height:100%;width:100%;'><a style='display: flex;justify-content: center;align-items: center;' href='content/{$row['url']}'>{$row['page_name']}</a></div><br>";
-                            $prev_group=$row['group_name'];
+                            echo "<div><a style='height:200px;width:200px;text-align: center;vertical-align: middle;' class='btn btn-primary btn-lg' href='content/{$row['url']}' role='button'>{$row['page_name']}</a></div>";                            $prev_group=$row['group_name'];
                         }
                         echo "</div>";
                         $row=return_field_data($pdo, "users", "username", $username);

@@ -67,7 +67,7 @@
                                 <div class="col-lg-12">
                                     <form id="register-form" method="post" role="form" >
                                         <div class="form-group">
-                                            <textarea name="description" id="description" tabindex="7" class="form-control"  placeholder="Description"><?php echo $descr ?></textarea>
+                                            <textarea name="description" id="description" tabindex="7" class="form-control"  placeholder="Description"><?php echo $description ?></textarea>
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
