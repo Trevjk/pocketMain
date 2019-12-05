@@ -168,15 +168,6 @@
             die($conn->error);
     }
 
-    if ($conn->query("SELECT * FROM pages WHERE name = 'Cheat Sheet'")->num_rows === 0) {
-        $query = 'INSERT INTO pages (id, name, description, url, group_id)
-                VALUES ("2", "Cheat Sheet", "Cheat Sheet", "cheat.php", "2");';
-                
-        $result = $conn->query($query);
-        if (!$result)
-            die($conn->error);
-    }
-
     if ($conn->query("SELECT * FROM pages WHERE name = 'Notes'")->num_rows === 0) {
         $query = 'INSERT INTO pages (id, name, description, url, group_id)
                 VALUES ("3", "Notes", "", "notes.php", "2");';
@@ -189,24 +180,6 @@
     if ($conn->query("SELECT * FROM pages WHERE name = 'Nothing'")->num_rows === 0) {
         $query = 'INSERT INTO pages (id, name, description, url, group_id)
                 VALUES ("4", "Nothing", "Nothing", "nothing.php", "3");';
-                
-        $result = $conn->query($query);
-        if (!$result)
-            die($conn->error);
-    }
-
-    if ($conn->query("SELECT * FROM pages WHERE name = 'Record'")->num_rows === 0) {
-        $query = 'INSERT INTO pages (id, name, description, url, group_id)
-                VALUES ("5", "Record", "Win loss data", "record.php", "2");';
-                
-        $result = $conn->query($query);
-        if (!$result)
-            die($conn->error);
-    }
-
-    if ($conn->query("SELECT * FROM pages WHERE name = 'Hat Combos'")->num_rows === 0) {
-        $query = 'INSERT INTO pages (id, name, description, url, group_id)
-                VALUES ("6", "Hat Combos", "Hat combos", "hatcombos.php", "2");';
                 
         $result = $conn->query($query);
         if (!$result)
