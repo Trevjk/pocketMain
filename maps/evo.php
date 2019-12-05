@@ -1,4 +1,4 @@
-<?php include "includes/nav.php" ?>
+<?php include "../includes/init.php" ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +13,9 @@
           }
         </style>
     </head>
+    <?php include "../includes/header.php" ?>
     <body>
+    <?php include "../includes/nav.php" ?>
 
  <h1>Super Smash Bros. Ultimate Evo Ruleset</h1>
 

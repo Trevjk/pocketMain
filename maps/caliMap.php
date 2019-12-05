@@ -1,60 +1,73 @@
-<?php include "includes/nav.php" ?>
+<?php include "../includes/init.php" ?>
 <!DOCTYPE html>
 
 <html>
   <head>
     <style>
-    body {
-      font-size: 125%;
-    }
-    .row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+
+.picture-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  justify-items:center;
+  grid-gap:5px;
+  grid-row:0px;
 }
 
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 0 4px;
+.grid-box img{
+width:100%;
+display: block;
 }
 
-.column img {
-  margin-top: 4px;
-  vertical-align: middle;
+.center {
+  margin: auto;
+  width: 60%;
+  border: none;
+  padding: 10px;
 }
+
 input[type=submit] {
   width: 16em; height:2em;
   font-size: 15px;
 }
 </style>
 </head>
+<?php include "../includes/header.php" ?>
 <body>
+<?php include "../includes/nav.php" ?>
 
-  <h1>Starter Stages</h1>
+<h1 style="text-align: center;">California - Starter Stages</h1>
 
-  <div class="row">
-    <div class="column">
-      <img src="finalDest.jpg" width="800"></img>
-      <img src="Battlefield.jpg" width="800"></img>
-    </div>
-    <div class="column">
-      <img src="townCity.jpg" width="800"></img>
-      <img src="smashville.jpg" width = "800"></img>
-    </div>
-    <div class="column">
-      <img src="pokeStad2.jpg" width="800"></img>
-    </div>
+<div class="center">
+  <div class="picture-grid">
+    <div class="grid-box"><img src="finalDest.jpg" id="finalDest" onclick="clickChange(this.id)"></img></div>
+    <div class="grid-box"><img src="Battlefield.jpg" id="Battlefield" onclick="clickChange(this.id)"></img></div>
+    <div class="grid-box"><img src="townCity.jpg" id="townCity" onclick="clickChange(this.id)"></img></div>
+    <div class="grid-box"><img src="smashville.jpg" id="smashville" onclick="clickChange(this.id)"></img></div>
+    <div class="grid-box"><img src="pokeStad2.jpg" id="pokeStad2" onclick="clickChange(this.id)"></img></div>
   </div>
+</div>
 
-  <h1>Counterpick Stages</h1>
+  <h1 style="text-align: center;">Counterpick Stages</h1>
 
-  <div class="row">
-    <div class="column">
-      <img src="kalos.jpg" width="800"></img>
-      <img src="yoshiIsland.jpg" width="800"></img>
-    </div>
+  <div class="center">
+  <div class="picture-grid">
+    <div class="grid-box"><img src="kalos.jpg" id="kalos" onclick="clickChange(this.id)" width="800"></img></div>
+    <div class="grid-box"><img src="yoshiIsland.jpg" id="yoshiIsland" onclick="clickChange(this.id)" width="800"></img></div>
   </div>
+</div>
+
+<script>
+  function clickChange(id) {
+    var image = document.getElementById(id);
+    var source = document.getElementById(id).src;
+    if (image.src.includes("Gray")) {
+    	image.src = id + ".jpg";
+    }
+    else {
+    	image.src = id + "Gray.jpg";
+    }
+  }
+  </script>
 
   <?php
     if(isset($_POST["next"]))
@@ -63,7 +76,9 @@ input[type=submit] {
 
   <br>
   <form method="post" action="caliMap.php">
+    <div class="center">
     <input type="submit" name="next" value="Return to Rules">
+    </div>
   </form>
 
 </body>
