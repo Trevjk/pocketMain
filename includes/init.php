@@ -105,9 +105,54 @@
             die($conn->error);
     }
 
+    if ($conn->query("SELECT * FROM groups WHERE name = 'Users'")->num_rows === 0) {
+        $query = 'INSERT INTO groups (id, name, description)
+                VALUES ("2", "Users", "User Exclusive Content");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM groups WHERE name = 'Peasants'")->num_rows === 0) {
+        $query = 'INSERT INTO groups (id, name, description)
+                VALUES ("3", "Peasants", "NON-PREMIUM USERS");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
     if ($conn->query("SELECT * FROM user_group_link WHERE id = '1'")->num_rows === 0) {
         $query = 'INSERT INTO user_group_link (id, group_id, user_id)
                 VALUES ("1", "1", "1");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM user_group_link WHERE id = '2'")->num_rows === 0) {
+        $query = 'INSERT INTO user_group_link (id, group_id, user_id)
+                VALUES ("2", "2", "1");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM user_group_link WHERE id = '3'")->num_rows === 0) {
+        $query = 'INSERT INTO user_group_link (id, group_id, user_id)
+                VALUES ("3", "2", "2");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM user_group_link WHERE id = '4'")->num_rows === 0) {
+        $query = 'INSERT INTO user_group_link (id, group_id, user_id)
+                VALUES ("4", "3", "2");';
                 
         $result = $conn->query($query);
         if (!$result)
@@ -122,6 +167,54 @@
         if (!$result)
             die($conn->error);
     }
+
+    if ($conn->query("SELECT * FROM pages WHERE name = 'Cheat Sheet'")->num_rows === 0) {
+        $query = 'INSERT INTO pages (id, name, description, url, group_id)
+                VALUES ("2", "Cheat Sheet", "Cheat Sheet", "cheat.php", "2");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM pages WHERE name = 'Notes'")->num_rows === 0) {
+        $query = 'INSERT INTO pages (id, name, description, url, group_id)
+                VALUES ("3", "Notes", "", "notes.php", "2");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM pages WHERE name = 'Nothing'")->num_rows === 0) {
+        $query = 'INSERT INTO pages (id, name, description, url, group_id)
+                VALUES ("4", "Nothing", "Nothing", "nothing.php", "3");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM pages WHERE name = 'Record'")->num_rows === 0) {
+        $query = 'INSERT INTO pages (id, name, description, url, group_id)
+                VALUES ("5", "Record", "Win loss data", "record.php", "2");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+    if ($conn->query("SELECT * FROM pages WHERE name = 'Hat Combos'")->num_rows === 0) {
+        $query = 'INSERT INTO pages (id, name, description, url, group_id)
+                VALUES ("6", "Hat Combos", "Hat combos", "hatcombos.php", "2");';
+                
+        $result = $conn->query($query);
+        if (!$result)
+            die($conn->error);
+    }
+
+
+    
 
     $conn->close();
 
