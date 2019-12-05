@@ -14,6 +14,10 @@
                     <li class="active"><a href="/<?php echo $root_directory?>/index.php"><h4>Home</h4></a></li>
                     <li><a href="/<?php echo $root_directory?>/page1.php"><h4>Rulesets</h4></a></li>
                     <li><a href="/<?php echo $root_directory?>/characters/character_page.php"><h4>Characters</h4></a></li>
+<<<<<<< HEAD
+=======
+                    <li><a href="/<?php echo $root_directory?>/page3.php"><h4>Users</h4></a></li>
+>>>>>>> trevjk
                 </ul>
                 <ul class="nav navbar-nav navbar-right blue">
                     <?php

@@ -29,7 +29,11 @@
 
         <div id="form" class="header_">
             Search for character<br>
+<<<<<<< HEAD
             <input style="f-bottom:40px;" type="text" name="character" id="character" onkeyup="myFunction()" placeholder="Enter name"><br>
+=======
+            <input style="margin-bottom:40px;" type="text" name="character" id="character" onkeyup="myFunction()" placeholder="Enter name"><br>
+>>>>>>> trevjk
 
             <table id="chartable" class="center">
                 <tr>
