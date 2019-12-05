@@ -29,9 +29,9 @@
                     $sql.="WHERE username='{$username}' ";
                     $sql.="ORDER BY group_name";
                     $result = $pdo->query($sql);
-                    // if ($result->rowCount()>0) {
-                    //     $prev_group=" ";
-                        // echo "<div style='display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));justify-items:center;grid-gap:5px;grid-row:0px;'>";
+                    if ($result->rowCount()>0) {
+                        $prev_group=" ";
+                        echo "<div style='display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));justify-items:center;grid-gap:5px;grid-row:0px;'>";
                         foreach ($result as $row) {
                             // if ($prev_group!=$row['group_name']) {
                             //     echo "<tr class='tbl-group-head'><td>{$row['group_name']}</td><td>{$row['group_description']}</td><td></td></tr>";
