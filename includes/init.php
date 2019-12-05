@@ -24,7 +24,7 @@
     ];
     $pdo = new PDO($dsn, $un, $pw, $opt);
     
-    $root_directory = "pocketMain2";
+    $root_directory = "pocketMain";
     $from_email = "fake_email@mail.com";
     $reply_email = "fake_email@mail.com";
     include "php_functions.php";
